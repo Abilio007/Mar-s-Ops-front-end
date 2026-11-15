@@ -1,0 +1,27 @@
+.tooltip_container{
+    border-radius: 8px;
+    padding: 16px;
+    position: absolute;
+    color: #222222;
+    background: #ffffff;
+    z-index: 10;
+    top: 20px;
+    left: 20px;
+    max-width: 250px;
+}
+
+.tooltip_container h2{
+    text-align: center;
+    font-size: 20px;
+}
+
+.tooltip_container p{
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.tooltip_container i{
+    font-weight: bold;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,468 @@
+/* Travel Planner Module — Harmonized with MARTE Dark Glass Identity */
+.trips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.trip-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-fast);
+}
+
+.trip-card:hover {
+  border-color: var(--color-border-red);
+}
+
+.trip-card__title {
+  font-size: 1.15rem;
+  color: var(--color-text-primary);
+}
+
+.trip-card__route {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.trip-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trip-progress__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.trip-progress__bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(245, 245, 245, 0.1);
+  overflow: hidden;
+}
+
+.trip-progress__fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-accent-red), var(--color-accent-orange));
+}
+
+.trip-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.earth-trips-panel,
+.earth-trip-card {
+  margin-bottom: var(--space-4);
+}
+
+.earth-trip-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.earth-trips-list {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.earth-trip-route {
+  display: block;
+  width: 100%;
+  min-height: 180px;
+  margin: var(--space-4) 0;
+  overflow: visible;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  background: rgba(3, 6, 9, 0.65);
+}
+
+.earth-trip-route__line {
+  fill: none;
+  stroke: var(--color-positive);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.earth-trip-route__point--start {
+  fill: var(--color-accent-orange);
+}
+
+.earth-trip-route__point--end {
+  fill: var(--color-positive);
+}
+
+.earth-trip-route__label {
+  fill: var(--color-text-secondary);
+  font-size: 11px;
+}
+
+.earth-trip-steps {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.earth-trip-steps li {
+  padding: var(--space-2);
+  color: var(--color-text-primary);
+}
+
+.earth-trip-steps small {
+  display: block;
+  margin-top: 2px;
+  color: var(--color-text-muted);
+}
+
+.earth-trip-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Form Layout */
+.planner-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.planner-form__full {
+  grid-column: 1 / -1;
+}
+
+.planner-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+/* Route Planner over Persistent 3D Globe */
+.route-planner-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.route-globe-spacer {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.route-globe-spacer__hud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  pointer-events: auto;
+}
+
+.route-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  pointer-events: auto;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-swatch {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.legend-swatch--safe {
+  background: var(--color-positive);
+}
+
+.legend-swatch--danger {
+  background: var(--color-accent-red);
+}
+
+.legend-swatch--origin {
+  background: #e9692c;
+}
+
+.legend-swatch--destination {
+  background: #78e62e;
+}
+
+.legend-swatch--waypoint {
+  background: #f5f5f5;
+}
+
+.route-itinerary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.route-itinerary__stop {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(3, 6, 9, 0.65);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.route-itinerary__marker {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 50%;
+}
+
+.route-itinerary__marker--origin {
+  background: #e9692c;
+}
+
+.route-itinerary__marker--destination {
+  background: #78e62e;
+}
+
+.route-itinerary__marker--waypoint {
+  background: #f5f5f5;
+}
+
+.route-itinerary__details {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.route-itinerary__role {
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.route-itinerary__details strong {
+  overflow-wrap: anywhere;
+}
+
+.route-itinerary__coordinates {
+  color: var(--color-text-secondary);
+  font-size: 0.76rem;
+}
+
+.waypoints-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-3) 0;
+}
+
+.waypoint-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(3, 6, 9, 0.65);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+}
+
+.waypoint-row__controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.route-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.metric-cell {
+  padding: var(--space-3);
+  background: rgba(3, 6, 9, 0.62);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.metric-cell__label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.metric-cell__value {
+  margin-top: 2px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Trip Details View */
+.trip-details-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background: rgba(3, 6, 9, 0.52);
+  border: 1px solid var(--color-border-subtle);
+  font-size: 0.875rem;
+}
+
+.checklist-item input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-positive);
+  cursor: pointer;
+}
+
+/* Calendar Grid */
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.calendar-weekdays,
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.calendar-weekdays {
+  margin-bottom: 6px;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.calendar-cell {
+  min-height: 76px;
+  padding: 6px;
+  border-radius: var(--radius-md);
+  background: rgba(3, 6, 9, 0.56);
+  border: 1px solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.calendar-cell--muted {
+  opacity: 0.35;
+}
+
+.calendar-cell--has-event {
+  border-color: var(--color-border-red);
+}
+
+.calendar-cell__day {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+.calendar-event-btn {
+  width: 100%;
+  text-align: left;
+  padding: 3px 6px;
+  border-radius: 4px;
+  background: var(--color-accent-red-soft);
+  color: var(--color-text-primary);
+  font-size: 0.72rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-event-btn--active {
+  background: rgba(233, 105, 44, 0.25);
+}
+
+.calendar-event-btn--done {
+  background: var(--color-positive-soft);
+}
+
+@media (min-width: 768px) {
+  .trips-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .planner-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trip-details-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .trips-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .route-planner-layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(380px, 0.9fr);
+  }
+
+  .route-globe-spacer {
+    min-height: 480px;
+  }
+}

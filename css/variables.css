@@ -1,0 +1,81 @@
+:root {
+  /* Core Mars Palette */
+  --color-bg-primary: #030609;
+  --color-surface: #071017;
+  --color-surface-elevated: #0b1620;
+  --color-surface-glass: rgba(5, 11, 16, 0.82);
+  --color-surface-glass-strong: rgba(5, 11, 16, 0.94);
+
+  --color-accent-red: #ff2929;
+  --color-accent-red-soft: rgba(255, 41, 41, 0.12);
+  --color-accent-red-glow: rgba(255, 41, 41, 0.35);
+
+  --color-accent-orange: #e9692c;
+  --color-accent-orange-soft: rgba(233, 105, 44, 0.16);
+
+  --color-positive: #78e62e;
+  --color-positive-soft: rgba(120, 230, 46, 0.14);
+
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a6b0b8;
+  --color-text-muted: #6f7c87;
+
+  --color-border-subtle: rgba(245, 245, 245, 0.14);
+  --color-border-strong: rgba(245, 245, 245, 0.26);
+  --color-border-red: rgba(255, 41, 41, 0.58);
+
+  /* Typography */
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Spacing & Layout */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --dock-height: 74px;
+  --max-content-width: 1440px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 160ms var(--ease-out-expo);
+  --transition-base: 320ms var(--ease-out-expo);
+}
+
+/* High-Contrast Theme Variant */
+html.theme-high-contrast {
+  --color-bg-primary: #000000;
+  --color-surface: #0a131a;
+  --color-surface-elevated: #101d27;
+  --color-surface-glass: rgba(6, 12, 18, 0.94);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #c9d2d9;
+  --color-border-subtle: rgba(245, 245, 245, 0.28);
+  --color-border-strong: rgba(245, 245, 245, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+  }
+}
+
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}

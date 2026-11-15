@@ -1,0 +1,329 @@
+/* Mission Status Module — Matches Reference Image 4 (Estado_actual_da_viagem) */
+.status-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: calc(100dvh - 180px);
+  justify-content: space-between;
+}
+
+.status-top-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.status-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.status-hero-title__red {
+  display: block;
+  color: var(--color-accent-red);
+}
+
+.status-hero-sub {
+  margin-top: var(--space-2);
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  max-width: 34ch;
+}
+
+.status-sim-note {
+  margin-top: var(--space-2);
+  font-size: 0.78rem;
+  color: var(--color-accent-orange);
+}
+
+.status-top-right {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .status-top-right {
+    max-width: 340px;
+  }
+}
+
+.status-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+/* Wide Left Telemetry Card (Gauge + Divider + 3 Key Metrics) */
+.status-telemetry-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding: var(--space-6);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+}
+
+.status-gauge-block {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.status-rocket-ring {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+}
+
+.status-rocket-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.status-rocket-ring__bg {
+  fill: none;
+  stroke: rgba(255, 41, 41, 0.18);
+  stroke-width: 9;
+}
+
+.status-rocket-ring__fill {
+  fill: none;
+  stroke: var(--color-accent-red);
+  stroke-width: 9;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 280ms ease;
+}
+
+.status-rocket-ring__icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+}
+
+.status-rocket-ring__icon svg {
+  width: 32px;
+  height: 32px;
+  transform: none;
+}
+
+.status-days__kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.status-days__number {
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.05;
+}
+
+.status-days__sub {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.status-metrics-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-4);
+}
+
+.status-metric-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.status-metric-item__icon {
+  color: var(--color-accent-red);
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.status-metric-item__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.status-metric-item__val {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Right Arrival Point Card (PONTO DE CHEGADA) */
+.arrival-card {
+  padding: var(--space-5);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.arrival-card__title {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.arrival-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.arrival-row__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.arrival-row__divider {
+  height: 1px;
+  background: var(--color-border-subtle);
+}
+
+.arrival-risk-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  text-align: left;
+  padding: var(--space-2) 0;
+  transition: opacity var(--transition-fast);
+}
+
+.arrival-risk-btn:hover {
+  opacity: 0.85;
+}
+
+/* Secondary Telemetry & Alerts Drawer */
+.status-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.telemetry-mini-card {
+  padding: var(--space-4);
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.telemetry-mini-card__label {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.telemetry-mini-card__val {
+  margin-top: 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.alerts-board__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.security-alert {
+  padding: var(--space-4);
+  background: rgba(5, 11, 16, 0.86);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.security-alert--critical {
+  border-color: var(--color-border-red);
+}
+
+.security-alert__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.security-alert__title {
+  font-family: var(--font-display);
+  font-size: 0.96rem;
+  font-weight: 600;
+}
+
+.security-alert__desc {
+  font-size: 0.84rem;
+  color: var(--color-text-secondary);
+}
+
+.security-alert__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+@media (min-width: 768px) {
+  .status-telemetry-card {
+    grid-template-columns: 1.05fr 1fr;
+    align-items: center;
+  }
+
+  .status-metrics-col {
+    padding-left: var(--space-6);
+    border-left: 1px solid var(--color-border-subtle);
+  }
+
+  .status-extra-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .alerts-board__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .status-main-grid {
+    grid-template-columns: minmax(0, 1.5fr) minmax(310px, 0.85fr);
+  }
+}

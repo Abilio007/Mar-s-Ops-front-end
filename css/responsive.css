@@ -1,0 +1,56 @@
+/* Mobile First Breakpoints:
+   - Smartphones: 320px - 767px (default)
+   - Tablets: 768px - 1023px
+   - Laptops: 1024px - 1439px
+   - Monitors: >= 1440px
+*/
+
+@media (max-width: 767px) {
+  .brand-header {
+    padding: var(--space-4) var(--space-4) 0;
+  }
+
+  .brand-header__center {
+    display: none;
+  }
+
+  .main-stage {
+    padding: var(--space-3) var(--space-4);
+    padding-bottom: calc(var(--dock-height) + var(--space-6));
+  }
+
+  .bottom-dock {
+    bottom: var(--space-2);
+    width: calc(100vw - 1rem);
+    height: 64px;
+    border-radius: 14px;
+    padding: 0 4px;
+  }
+
+  .bottom-dock__btn {
+    font-size: 0.68rem;
+    gap: 3px;
+    padding: 0 2px;
+  }
+
+  .bottom-dock__btn svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .btn,
+  .field__control {
+    min-height: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .brand-header {
+    padding: var(--space-6) var(--space-8) 0;
+  }
+
+  .main-stage {
+    padding: var(--space-5) var(--space-8);
+    padding-bottom: calc(var(--dock-height) + var(--space-8));
+  }
+}

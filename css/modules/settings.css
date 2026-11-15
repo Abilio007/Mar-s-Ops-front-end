@@ -1,0 +1,164 @@
+/* Settings Module — Matches Reference Image 3 (Defini__es_b_sicas) */
+.settings-stage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-height: calc(100dvh - 180px);
+}
+
+.settings-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.settings-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.settings-menu-card {
+  background: var(--color-surface-glass);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  pointer-events: auto;
+}
+
+.settings-menu-btn {
+  width: 100%;
+  min-height: 62px;
+  padding: 0 var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  touch-action: manipulation;
+  transition: background-color var(--transition-fast);
+}
+
+.settings-menu-btn:last-child {
+  border-bottom: none;
+}
+
+.settings-menu-btn:hover {
+  background: rgba(245, 245, 245, 0.05);
+}
+
+.settings-menu-btn.is-active {
+  background: rgba(255, 41, 41, 0.1);
+}
+
+.settings-menu-btn__left {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.settings-menu-btn__left svg {
+  width: 22px;
+  height: 22px;
+  color: var(--color-text-secondary);
+}
+
+.settings-menu-btn.is-active .settings-menu-btn__left svg {
+  color: var(--color-text-primary);
+}
+
+.settings-menu-btn__arrow {
+  color: var(--color-accent-red);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.settings-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.setting-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.setting-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.setting-row__info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.setting-row__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.setting-row__desc {
+  margin-top: 2px;
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+}
+
+.setting-row__control {
+  min-width: 190px;
+}
+
+.activity-log {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.activity-log__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(3, 6, 9, 0.55);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+}
+
+.about-specs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .about-specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .settings-layout {
+    grid-template-columns: 360px minmax(0, 480px);
+    gap: var(--space-6);
+  }
+}

@@ -1,0 +1,250 @@
+/* SweetAlert2 Custom Dark Space Theme — MARTE */
+.swal2-container {
+  z-index: 120 !important;
+}
+
+.marte-swal-backdrop {
+  background: rgba(3, 6, 9, 0.84) !important;
+}
+
+.marte-swal-popup {
+  background: #071017 !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border-strong) !important;
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.78) !important;
+  padding: var(--space-5) !important;
+  font-family: var(--font-body) !important;
+}
+
+.marte-swal-popup--P1 {
+  border-color: var(--color-border-red) !important;
+  box-shadow:
+    0 0 36px rgba(255, 41, 41, 0.22),
+    0 24px 64px rgba(0, 0, 0, 0.8) !important;
+}
+
+.marte-swal-popup--P2 {
+  border-color: rgba(233, 105, 44, 0.65) !important;
+  box-shadow:
+    0 0 28px rgba(233, 105, 44, 0.18),
+    0 24px 64px rgba(0, 0, 0, 0.8) !important;
+}
+
+.marte-swal-popup--P3 {
+  border-color: var(--color-border-strong) !important;
+}
+
+.marte-swal-title {
+  font-family: var(--font-display) !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--color-text-primary) !important;
+  letter-spacing: 0.02em !important;
+  padding-top: 0.25rem !important;
+}
+
+.marte-swal-html {
+  color: var(--color-text-secondary) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+  text-align: left !important;
+}
+
+.marte-swal-actions {
+  gap: 10px !important;
+  flex-wrap: wrap !important;
+  margin-top: 1.25rem !important;
+}
+
+.marte-swal-btn {
+  min-height: 40px;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.marte-swal-btn:active {
+  transform: scale(0.98);
+}
+
+.marte-swal-btn--primary {
+  background: var(--color-accent-red);
+  color: #ffffff;
+  border: 1px solid var(--color-accent-red);
+}
+
+.marte-swal-btn--primary:hover {
+  background: #e52222;
+}
+
+.marte-swal-btn--orange {
+  background: var(--color-accent-orange);
+  color: #ffffff;
+  border: 1px solid var(--color-accent-orange);
+}
+
+.marte-swal-btn--secondary {
+  background: var(--color-surface-elevated);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-strong);
+}
+
+.marte-swal-btn--secondary:hover {
+  background: #10202e;
+}
+
+.marte-swal-btn--ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.marte-swal-btn--ghost:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+/* Priority Tags & Emergency Cards inside SweetAlert2 */
+.swal-priority-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.swal-priority-badge--P1 {
+  background: rgba(255, 41, 41, 0.16);
+  border: 1px solid rgba(255, 41, 41, 0.65);
+  color: #ff6b6b;
+}
+
+.swal-priority-badge--P2 {
+  background: rgba(233, 105, 44, 0.16);
+  border: 1px solid rgba(233, 105, 44, 0.65);
+  color: #ff9c66;
+}
+
+.swal-priority-badge--P3 {
+  background: rgba(166, 176, 184, 0.14);
+  border: 1px solid rgba(166, 176, 184, 0.45);
+  color: #cfd7de;
+}
+
+.swal-emergency-box {
+  padding: 12px 14px;
+  background: rgba(3, 6, 9, 0.65);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  margin-top: 10px;
+}
+
+.swal-emergency-box__label {
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.swal-emergency-box__text {
+  font-size: 0.86rem;
+  color: var(--color-text-primary);
+}
+
+.swal-center-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 250px;
+  overflow-y: auto;
+  margin-top: 8px;
+}
+
+.swal-center-item {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(3, 6, 9, 0.72);
+  border: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.swal-center-item:hover {
+  border-color: var(--color-border-red);
+  background: rgba(20, 8, 10, 0.82);
+}
+
+.swal-center-item__title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.swal-center-item__meta {
+  font-size: 0.76rem;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.swal-dispatch-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+@media (min-width: 560px) {
+  .swal-dispatch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.swal2-icon.swal2-error {
+  border-color: #ff2929 !important;
+  color: #ff2929 !important;
+}
+
+.swal2-icon.swal2-error [class^='swal2-x-mark-line'] {
+  background-color: #ff2929 !important;
+}
+
+.swal2-icon.swal2-warning {
+  border-color: #e9692c !important;
+  color: #e9692c !important;
+}
+
+.swal2-icon.swal2-info {
+  border-color: #a6b0b8 !important;
+  color: #a6b0b8 !important;
+}
+
+.swal2-icon.swal2-success {
+  border-color: #78e62e !important;
+  color: #78e62e !important;
+}
+
+.swal2-icon.swal2-success [class^='swal2-success-line'] {
+  background-color: #78e62e !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(120, 230, 46, 0.35) !important;
+}

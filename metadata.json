@@ -1,0 +1,6 @@
+{
+  "name": "MARTE — Rastreador de Exploração",
+  "description": "Plataforma futurista de acompanhamento e planeamento de missões de exploração em Marte com globo 3D interativo em Three.js, monitorização de telemetria simulada, assistente inteligente e gestão de viagens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

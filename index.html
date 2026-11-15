@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt" class="theme-dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#130d0c" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="MARTE" />
+    <title>MARSIS OPS</title>
+    <meta
+      name="description"
+      content="Tenha o mapa de Marte em sua mão. Explore com segurança através de globo 3D interativo, monitorização de missões, planeamento de viagens e assistente inteligente."
+    />
+    <meta property="og:title" content="MARTE — Rastreador de Exploração" />
+    <meta
+      property="og:description"
+      content="Plataforma modular de acompanhamento e planeamento de missões de exploração em Marte."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="/icons/mars.svg" />
+    <link rel="apple-touch-icon" href="/icons/mars-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <div class="cosmic-backdrop" aria-hidden="true">
+      <div class="cosmic-nebula cosmic-nebula--red"></div>
+      <div class="cosmic-nebula cosmic-nebula--amber"></div>
+      <div class="cosmic-stars"></div>
+    </div>
+
+    <!-- Persistent 3D Mars Stage (transforms smoothly per route without WebGL teardown) -->
+    <div id="mars-persistent-stage" class="mars-stage mars-stage--home" aria-hidden="false">
+      <div id="mars-global-canvas" class="mars-stage__canvas"></div>
+      <div class="mars-stage__hud-arc" aria-hidden="true"></div>
+    </div>
+
+    <div id="app" class="app-shell">
+      <header id="app-header" class="brand-header" role="banner"></header>
+
+      <main id="app-main" class="main-stage" role="main" tabindex="-1"></main>
+
+      <nav id="bottom-dock" class="bottom-dock" aria-label="Navegação principal"></nav>
+    </div>
+
+    <div id="map-location-tooltip-root" class="map-location-tooltip-root" hidden></div>
+
+    <div
+      id="toast-container"
+      class="toast-container"
+      aria-live="polite"
+      aria-atomic="true"
+    ></div>
+
+    <div
+      id="modal-root"
+      class="modal-root"
+      hidden
+      role="dialog"
+      aria-modal="true"
+    ></div>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
